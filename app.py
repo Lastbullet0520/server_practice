@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, render_template
+from flask import Flask, request, jsonify, render_template, send_file
 import os
 from pymongo import MongoClient
 from ultralytics import YOLO
@@ -64,30 +64,34 @@ def upload_and_find():
                     class_id = int(box.cls)
                     class_name = class_names[class_id]
                     detected_objects.append(class_name)
-                    x, y, w, h = box.xyxy[0]
-                    x1, y1, x2, y2 = int(x), int(y), int(x + w), int(y + h)
+                    x1, y1, x2, y2 = map(int, box.xyxy[0])
 
                     # 바운딩 박스 그리기
                     cv2.rectangle(img, (x1, y1), (x2, y2), (0, 255, 0), 2)
-                    cv2.putText(img, class_name, (x1, y1 - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (0, 255, 0), 1)
+                    cv2.putText(img, class_name, (x1, y1 - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 255, 0), 1)
 
             output_filename = os.path.join(app.config['UPLOAD_FOLDER'], 'output_' + file.filename)
             cv2.imwrite(output_filename, img)
 
             ingredients = ','.join(set(detected_objects))  # 중복 제거 후 콤마로 구분된 문자열로 변환
             print("Detected ingredients:", ingredients)
-            # temp_list = []
-            # for i in results:
-            #     for box in i.boxes:
-                    # print(box.xyxy[0])
-                    # temp_list.append(box.xyxy[0])
-            return ingredients
+
+            return jsonify({
+                "ingredients": ingredients,
+                "output_image": output_filename
+            })
 
         except Exception as e:
             print("YOLOv8 Exception in image recognition: %s\n" % e)
             return jsonify({"error": "YOLO error"}), 500
 
     return jsonify({"error": "undefined error occurs"}), 500
+
+
+@app.route("/download/<filename>")
+def download_file(filename):
+    output_filename = "output_" + filename
+    return send_file(os.path.join(app.config['UPLOAD_FOLDER'], output_filename), as_attachment=True)
 
 
 @app.route("/findfoodlist", methods=["GET"])  # 식재료 넣으면 JSON 받는 코드
@@ -149,4 +153,6 @@ def find_food_list():
 
 
 if __name__ == '__main__':
+    if not os.path.exists(app.config['UPLOAD_FOLDER']):
+        os.makedirs(app.config['UPLOAD_FOLDER'])
     app.run(host='192.168.45.158', port=5000, debug=True)
