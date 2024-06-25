@@ -1,0 +1,367 @@
+{
+   "id": "667527c2c514c9e7249dfb91",
+   "name": "Project_Recipe",
+   "creation_time": "2024-06-21T07:12:02.955000+00:00",
+   "creator_id": "e71d8df5-90ea-45c1-8b51-2c7681a3aaa9",
+   "pipeline": {
+      "tasks": [
+         {
+            "id": "667527c2c514c9e7249dfb92",
+            "title": "Dataset",
+            "task_type": "dataset"
+         },
+         {
+            "id": "667527c2c514c9e7249dfb94",
+            "title": "Detection oriented",
+            "task_type": "rotated_detection",
+            "labels": [
+               {
+                  "id": "667527c2c514c9e7249dfb96",
+                  "name": "Bean",
+                  "is_anomalous": false,
+                  "color": "#00a5cfff",
+                  "hotkey": "",
+                  "is_empty": false,
+                  "group": "Detection oriented labels",
+                  "parent_id": null
+               },
+               {
+                  "id": "667527c2c514c9e7249dfb97",
+                  "name": "Cherry Tomatoes",
+                  "is_anomalous": false,
+                  "color": "#c9e649ff",
+                  "hotkey": "",
+                  "is_empty": false,
+                  "group": "Detection oriented labels",
+                  "parent_id": null
+               },
+               {
+                  "id": "667527c2c514c9e7249dfb98",
+                  "name": "tomato",
+                  "is_anomalous": false,
+                  "color": "#81407bff",
+                  "hotkey": "",
+                  "is_empty": false,
+                  "group": "Detection oriented labels",
+                  "parent_id": null
+               },
+               {
+                  "id": "667527c2c514c9e7249dfb99",
+                  "name": "spam",
+                  "is_anomalous": false,
+                  "color": "#5b69ffff",
+                  "hotkey": "",
+                  "is_empty": false,
+                  "group": "Detection oriented labels",
+                  "parent_id": null
+               },
+               {
+                  "id": "667527c2c514c9e7249dfb9a",
+                  "name": "bacon",
+                  "is_anomalous": false,
+                  "color": "#f15b85ff",
+                  "hotkey": "",
+                  "is_empty": false,
+                  "group": "Detection oriented labels",
+                  "parent_id": null
+               },
+               {
+                  "id": "667527c2c514c9e7249dfb9b",
+                  "name": "Shiitake mushrooms",
+                  "is_anomalous": false,
+                  "color": "#e96115ff",
+                  "hotkey": "",
+                  "is_empty": false,
+                  "group": "Detection oriented labels",
+                  "parent_id": null
+               },
+               {
+                  "id": "667527c2c514c9e7249dfb9c",
+                  "name": "Matsutake mushroom",
+                  "is_anomalous": false,
+                  "color": "#ff7d00ff",
+                  "hotkey": "",
+                  "is_empty": false,
+                  "group": "Detection oriented labels",
+                  "parent_id": null
+               },
+               {
+                  "id": "667527c2c514c9e7249dfb9d",
+                  "name": "enoki mushroom",
+                  "is_anomalous": false,
+                  "color": "#9b5de5ff",
+                  "hotkey": "",
+                  "is_empty": false,
+                  "group": "Detection oriented labels",
+                  "parent_id": null
+               },
+               {
+                  "id": "667527c2c514c9e7249dfb9e",
+                  "name": "cucumber",
+                  "is_anomalous": false,
+                  "color": "#25a18eff",
+                  "hotkey": "",
+                  "is_empty": false,
+                  "group": "Detection oriented labels",
+                  "parent_id": null
+               },
+               {
+                  "id": "667527c2c514c9e7249dfb9f",
+                  "name": "Canned tuna",
+                  "is_anomalous": false,
+                  "color": "#ff5662ff",
+                  "hotkey": "",
+                  "is_empty": false,
+                  "group": "Detection oriented labels",
+                  "parent_id": null
+               },
+               {
+                  "id": "667527c2c514c9e7249dfba0",
+                  "name": "bean sprouts",
+                  "is_anomalous": false,
+                  "color": "#708541ff",
+                  "hotkey": "",
+                  "is_empty": false,
+                  "group": "Detection oriented labels",
+                  "parent_id": null
+               },
+               {
+                  "id": "667527c2c514c9e7249dfba1",
+                  "name": "Ramen",
+                  "is_anomalous": false,
+                  "color": "#9d3b1aff",
+                  "hotkey": "",
+                  "is_empty": false,
+                  "group": "Detection oriented labels",
+                  "parent_id": null
+               },
+               {
+                  "id": "667527c2c514c9e7249dfba2",
+                  "name": "Frozen dumplings",
+                  "is_anomalous": false,
+                  "color": "#076984ff",
+                  "hotkey": "",
+                  "is_empty": false,
+                  "group": "Detection oriented labels",
+                  "parent_id": null
+               },
+               {
+                  "id": "667527c2c514c9e7249dfba3",
+                  "name": "Sliced Cheese",
+                  "is_anomalous": false,
+                  "color": "#00f5d4ff",
+                  "hotkey": "",
+                  "is_empty": false,
+                  "group": "Detection oriented labels",
+                  "parent_id": null
+               },
+               {
+                  "id": "667527c2c514c9e7249dfba4",
+                  "name": "milk",
+                  "is_anomalous": false,
+                  "color": "#26518eff",
+                  "hotkey": "",
+                  "is_empty": false,
+                  "group": "Detection oriented labels",
+                  "parent_id": null
+               },
+               {
+                  "id": "667527c2c514c9e7249dfba5",
+                  "name": "Carrot",
+                  "is_anomalous": false,
+                  "color": "#f7dab3ff",
+                  "hotkey": "",
+                  "is_empty": false,
+                  "group": "Detection oriented labels",
+                  "parent_id": null
+               },
+               {
+                  "id": "667527c2c514c9e7249dfba6",
+                  "name": "egg",
+                  "is_anomalous": false,
+                  "color": "#d7bc5eff",
+                  "hotkey": "",
+                  "is_empty": false,
+                  "group": "Detection oriented labels",
+                  "parent_id": null
+               },
+               {
+                  "id": "667527c2c514c9e7249dfba7",
+                  "name": "pepper",
+                  "is_anomalous": false,
+                  "color": "#548fadff",
+                  "hotkey": "",
+                  "is_empty": false,
+                  "group": "Detection oriented labels",
+                  "parent_id": null
+               },
+               {
+                  "id": "667527c2c514c9e7249dfba8",
+                  "name": "potato",
+                  "is_anomalous": false,
+                  "color": "#80e9afff",
+                  "hotkey": "",
+                  "is_empty": false,
+                  "group": "Detection oriented labels",
+                  "parent_id": null
+               },
+               {
+                  "id": "667527c2c514c9e7249dfba9",
+                  "name": "garlic",
+                  "is_anomalous": false,
+                  "color": "#edb200ff",
+                  "hotkey": "",
+                  "is_empty": false,
+                  "group": "Detection oriented labels",
+                  "parent_id": null
+               },
+               {
+                  "id": "667527c2c514c9e7249dfbaa",
+                  "name": "Spring onion",
+                  "is_anomalous": false,
+                  "color": "#cc94daff",
+                  "hotkey": "",
+                  "is_empty": false,
+                  "group": "Detection oriented labels",
+                  "parent_id": null
+               },
+               {
+                  "id": "667527c2c514c9e7249dfbab",
+                  "name": "onion",
+                  "is_anomalous": false,
+                  "color": "#26518eff",
+                  "hotkey": "",
+                  "is_empty": false,
+                  "group": "Detection oriented labels",
+                  "parent_id": null
+               },
+               {
+                  "id": "667527c2c514c9e7249dfbac",
+                  "name": "bean curd",
+                  "is_anomalous": false,
+                  "color": "#548fadff",
+                  "hotkey": "",
+                  "is_empty": false,
+                  "group": "Detection oriented labels",
+                  "parent_id": null
+               },
+               {
+                  "id": "667527c2c514c9e7249dfbad",
+                  "name": "Radish",
+                  "is_anomalous": false,
+                  "color": "#c9e649ff",
+                  "hotkey": "",
+                  "is_empty": false,
+                  "group": "Detection oriented labels",
+                  "parent_id": null
+               },
+               {
+                  "id": "667527c2c514c9e7249dfbae",
+                  "name": "Fish Cakes",
+                  "is_anomalous": false,
+                  "color": "#e96115ff",
+                  "hotkey": "",
+                  "is_empty": false,
+                  "group": "Detection oriented labels",
+                  "parent_id": null
+               },
+               {
+                  "id": "667527c2c514c9e7249dfbaf",
+                  "name": "sausage",
+                  "is_anomalous": false,
+                  "color": "#cc94daff",
+                  "hotkey": "",
+                  "is_empty": false,
+                  "group": "Detection oriented labels",
+                  "parent_id": null
+               },
+               {
+                  "id": "667527c2c514c9e7249dfbb0",
+                  "name": "chicken",
+                  "is_anomalous": false,
+                  "color": "#f15b85ff",
+                  "hotkey": "",
+                  "is_empty": false,
+                  "group": "Detection oriented labels",
+                  "parent_id": null
+               },
+               {
+                  "id": "667527c2c514c9e7249dfbb1",
+                  "name": "beef",
+                  "is_anomalous": false,
+                  "color": "#ff5662ff",
+                  "hotkey": "",
+                  "is_empty": false,
+                  "group": "Detection oriented labels",
+                  "parent_id": null
+               },
+               {
+                  "id": "667527c2c514c9e7249dfbb2",
+                  "name": "pork",
+                  "is_anomalous": false,
+                  "color": "#edb200ff",
+                  "hotkey": "",
+                  "is_empty": false,
+                  "group": "Detection oriented labels",
+                  "parent_id": null
+               },
+               {
+                  "id": "667527c2c514c9e7249dfbb3",
+                  "name": "kimchi",
+                  "is_anomalous": false,
+                  "color": "#00a5cfff",
+                  "hotkey": "",
+                  "is_empty": false,
+                  "group": "Detection oriented labels",
+                  "parent_id": null
+               },
+               {
+                  "id": "667527c2c514c9e7249dfbb7",
+                  "name": "No object",
+                  "is_anomalous": false,
+                  "color": "#000000ff",
+                  "hotkey": "",
+                  "is_empty": true,
+                  "group": "No object",
+                  "parent_id": null
+               }
+            ],
+            "label_schema_id": "667527c2c514c9e7249dfbb9"
+         }
+      ],
+      "connections": [
+         {
+            "from": "667527c2c514c9e7249dfb92",
+            "to": "667527c2c514c9e7249dfb94"
+         }
+      ]
+   },
+   "thumbnail": "/api/v1/organizations/9e80d80b-9ac7-41f3-967d-1b0ef4be9362/workspaces/a689dc38-216a-4644-9268-b2cea684616f/projects/667527c2c514c9e7249dfb91/thumbnail",
+   "performance": {
+      "score": 0.2960199004975123,
+      "task_performances": [
+         {
+            "task_id": "667527c2c514c9e7249dfb94",
+            "score": {
+               "value": 0.2960199004975123,
+               "metric_type": "f-measure"
+            }
+         }
+      ]
+   },
+   "storage_info": {},
+   "datasets": [
+      {
+         "id": "667527c2c514c9e7249dfbb4",
+         "name": "Dataset",
+         "use_for_training": true,
+         "creation_time": "2024-06-21T07:12:02.950000+00:00"
+      },
+      {
+         "id": "667527c929ffce9c83b77fbf",
+         "name": "Testing set 1",
+         "use_for_training": false,
+         "creation_time": "2024-06-21T07:12:09.558000+00:00"
+      }
+   ]
+}

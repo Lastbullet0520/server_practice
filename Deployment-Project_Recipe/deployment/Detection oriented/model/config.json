@@ -1,0 +1,562 @@
+{
+    "type_of_model": "MaskRCNN",
+    "converter_type": "ROTATED_DETECTION",
+    "model_parameters": {
+        "result_based_confidence_threshold": true,
+        "confidence_threshold": 0.17499999701976776,
+        "nms_iou_threshold": 0.5,
+        "max_num_detections": 0,
+        "use_ellipse_shapes": false,
+        "resize_type": "standard",
+        "labels": {
+            "label_tree": {
+                "type": "tree",
+                "directed": true,
+                "nodes": [],
+                "edges": []
+            },
+            "label_groups": [
+                {
+                    "_id": "667527c2c514c9e7249dfbb6",
+                    "name": "Detection oriented labels",
+                    "label_ids": [
+                        "667527c2c514c9e7249dfb96",
+                        "667527c2c514c9e7249dfb97",
+                        "667527c2c514c9e7249dfb98",
+                        "667527c2c514c9e7249dfb99",
+                        "667527c2c514c9e7249dfb9a",
+                        "667527c2c514c9e7249dfb9b",
+                        "667527c2c514c9e7249dfb9c",
+                        "667527c2c514c9e7249dfb9d",
+                        "667527c2c514c9e7249dfb9e",
+                        "667527c2c514c9e7249dfb9f",
+                        "667527c2c514c9e7249dfba0",
+                        "667527c2c514c9e7249dfba1",
+                        "667527c2c514c9e7249dfba2",
+                        "667527c2c514c9e7249dfba3",
+                        "667527c2c514c9e7249dfba4",
+                        "667527c2c514c9e7249dfba5",
+                        "667527c2c514c9e7249dfba6",
+                        "667527c2c514c9e7249dfba7",
+                        "667527c2c514c9e7249dfba8",
+                        "667527c2c514c9e7249dfba9",
+                        "667527c2c514c9e7249dfbaa",
+                        "667527c2c514c9e7249dfbab",
+                        "667527c2c514c9e7249dfbac",
+                        "667527c2c514c9e7249dfbad",
+                        "667527c2c514c9e7249dfbae",
+                        "667527c2c514c9e7249dfbaf",
+                        "667527c2c514c9e7249dfbb0",
+                        "667527c2c514c9e7249dfbb1",
+                        "667527c2c514c9e7249dfbb2",
+                        "667527c2c514c9e7249dfbb3"
+                    ],
+                    "relation_type": "EXCLUSIVE"
+                },
+                {
+                    "_id": "667527c2c514c9e7249dfbb8",
+                    "name": "No object",
+                    "label_ids": [
+                        "667527c2c514c9e7249dfbb7"
+                    ],
+                    "relation_type": "EMPTY_LABEL"
+                }
+            ],
+            "all_labels": {
+                "667527c2c514c9e7249dfb96": {
+                    "_id": "667527c2c514c9e7249dfb96",
+                    "name": "Bean",
+                    "color": {
+                        "red": 0,
+                        "green": 165,
+                        "blue": 207,
+                        "alpha": 255
+                    },
+                    "hotkey": "",
+                    "domain": "ROTATED_DETECTION",
+                    "creation_date": "2024-06-21T07:12:02.939000",
+                    "is_empty": false,
+                    "is_anomalous": false
+                },
+                "667527c2c514c9e7249dfb97": {
+                    "_id": "667527c2c514c9e7249dfb97",
+                    "name": "Cherry Tomatoes",
+                    "color": {
+                        "red": 201,
+                        "green": 230,
+                        "blue": 73,
+                        "alpha": 255
+                    },
+                    "hotkey": "",
+                    "domain": "ROTATED_DETECTION",
+                    "creation_date": "2024-06-21T07:12:02.939000",
+                    "is_empty": false,
+                    "is_anomalous": false
+                },
+                "667527c2c514c9e7249dfb98": {
+                    "_id": "667527c2c514c9e7249dfb98",
+                    "name": "tomato",
+                    "color": {
+                        "red": 129,
+                        "green": 64,
+                        "blue": 123,
+                        "alpha": 255
+                    },
+                    "hotkey": "",
+                    "domain": "ROTATED_DETECTION",
+                    "creation_date": "2024-06-21T07:12:02.939000",
+                    "is_empty": false,
+                    "is_anomalous": false
+                },
+                "667527c2c514c9e7249dfb99": {
+                    "_id": "667527c2c514c9e7249dfb99",
+                    "name": "spam",
+                    "color": {
+                        "red": 91,
+                        "green": 105,
+                        "blue": 255,
+                        "alpha": 255
+                    },
+                    "hotkey": "",
+                    "domain": "ROTATED_DETECTION",
+                    "creation_date": "2024-06-21T07:12:02.939000",
+                    "is_empty": false,
+                    "is_anomalous": false
+                },
+                "667527c2c514c9e7249dfb9a": {
+                    "_id": "667527c2c514c9e7249dfb9a",
+                    "name": "bacon",
+                    "color": {
+                        "red": 241,
+                        "green": 91,
+                        "blue": 133,
+                        "alpha": 255
+                    },
+                    "hotkey": "",
+                    "domain": "ROTATED_DETECTION",
+                    "creation_date": "2024-06-21T07:12:02.939000",
+                    "is_empty": false,
+                    "is_anomalous": false
+                },
+                "667527c2c514c9e7249dfb9b": {
+                    "_id": "667527c2c514c9e7249dfb9b",
+                    "name": "Shiitake mushrooms",
+                    "color": {
+                        "red": 233,
+                        "green": 97,
+                        "blue": 21,
+                        "alpha": 255
+                    },
+                    "hotkey": "",
+                    "domain": "ROTATED_DETECTION",
+                    "creation_date": "2024-06-21T07:12:02.939000",
+                    "is_empty": false,
+                    "is_anomalous": false
+                },
+                "667527c2c514c9e7249dfb9c": {
+                    "_id": "667527c2c514c9e7249dfb9c",
+                    "name": "Matsutake mushroom",
+                    "color": {
+                        "red": 255,
+                        "green": 125,
+                        "blue": 0,
+                        "alpha": 255
+                    },
+                    "hotkey": "",
+                    "domain": "ROTATED_DETECTION",
+                    "creation_date": "2024-06-21T07:12:02.939000",
+                    "is_empty": false,
+                    "is_anomalous": false
+                },
+                "667527c2c514c9e7249dfb9d": {
+                    "_id": "667527c2c514c9e7249dfb9d",
+                    "name": "enoki mushroom",
+                    "color": {
+                        "red": 155,
+                        "green": 93,
+                        "blue": 229,
+                        "alpha": 255
+                    },
+                    "hotkey": "",
+                    "domain": "ROTATED_DETECTION",
+                    "creation_date": "2024-06-21T07:12:02.939000",
+                    "is_empty": false,
+                    "is_anomalous": false
+                },
+                "667527c2c514c9e7249dfb9e": {
+                    "_id": "667527c2c514c9e7249dfb9e",
+                    "name": "cucumber",
+                    "color": {
+                        "red": 37,
+                        "green": 161,
+                        "blue": 142,
+                        "alpha": 255
+                    },
+                    "hotkey": "",
+                    "domain": "ROTATED_DETECTION",
+                    "creation_date": "2024-06-21T07:12:02.939000",
+                    "is_empty": false,
+                    "is_anomalous": false
+                },
+                "667527c2c514c9e7249dfb9f": {
+                    "_id": "667527c2c514c9e7249dfb9f",
+                    "name": "Canned tuna",
+                    "color": {
+                        "red": 255,
+                        "green": 86,
+                        "blue": 98,
+                        "alpha": 255
+                    },
+                    "hotkey": "",
+                    "domain": "ROTATED_DETECTION",
+                    "creation_date": "2024-06-21T07:12:02.939000",
+                    "is_empty": false,
+                    "is_anomalous": false
+                },
+                "667527c2c514c9e7249dfba0": {
+                    "_id": "667527c2c514c9e7249dfba0",
+                    "name": "bean sprouts",
+                    "color": {
+                        "red": 112,
+                        "green": 133,
+                        "blue": 65,
+                        "alpha": 255
+                    },
+                    "hotkey": "",
+                    "domain": "ROTATED_DETECTION",
+                    "creation_date": "2024-06-21T07:12:02.939000",
+                    "is_empty": false,
+                    "is_anomalous": false
+                },
+                "667527c2c514c9e7249dfba1": {
+                    "_id": "667527c2c514c9e7249dfba1",
+                    "name": "Ramen",
+                    "color": {
+                        "red": 157,
+                        "green": 59,
+                        "blue": 26,
+                        "alpha": 255
+                    },
+                    "hotkey": "",
+                    "domain": "ROTATED_DETECTION",
+                    "creation_date": "2024-06-21T07:12:02.939000",
+                    "is_empty": false,
+                    "is_anomalous": false
+                },
+                "667527c2c514c9e7249dfba2": {
+                    "_id": "667527c2c514c9e7249dfba2",
+                    "name": "Frozen dumplings",
+                    "color": {
+                        "red": 7,
+                        "green": 105,
+                        "blue": 132,
+                        "alpha": 255
+                    },
+                    "hotkey": "",
+                    "domain": "ROTATED_DETECTION",
+                    "creation_date": "2024-06-21T07:12:02.939000",
+                    "is_empty": false,
+                    "is_anomalous": false
+                },
+                "667527c2c514c9e7249dfba3": {
+                    "_id": "667527c2c514c9e7249dfba3",
+                    "name": "Sliced Cheese",
+                    "color": {
+                        "red": 0,
+                        "green": 245,
+                        "blue": 212,
+                        "alpha": 255
+                    },
+                    "hotkey": "",
+                    "domain": "ROTATED_DETECTION",
+                    "creation_date": "2024-06-21T07:12:02.939000",
+                    "is_empty": false,
+                    "is_anomalous": false
+                },
+                "667527c2c514c9e7249dfba4": {
+                    "_id": "667527c2c514c9e7249dfba4",
+                    "name": "milk",
+                    "color": {
+                        "red": 38,
+                        "green": 81,
+                        "blue": 142,
+                        "alpha": 255
+                    },
+                    "hotkey": "",
+                    "domain": "ROTATED_DETECTION",
+                    "creation_date": "2024-06-21T07:12:02.939000",
+                    "is_empty": false,
+                    "is_anomalous": false
+                },
+                "667527c2c514c9e7249dfba5": {
+                    "_id": "667527c2c514c9e7249dfba5",
+                    "name": "Carrot",
+                    "color": {
+                        "red": 247,
+                        "green": 218,
+                        "blue": 179,
+                        "alpha": 255
+                    },
+                    "hotkey": "",
+                    "domain": "ROTATED_DETECTION",
+                    "creation_date": "2024-06-21T07:12:02.939000",
+                    "is_empty": false,
+                    "is_anomalous": false
+                },
+                "667527c2c514c9e7249dfba6": {
+                    "_id": "667527c2c514c9e7249dfba6",
+                    "name": "egg",
+                    "color": {
+                        "red": 215,
+                        "green": 188,
+                        "blue": 94,
+                        "alpha": 255
+                    },
+                    "hotkey": "",
+                    "domain": "ROTATED_DETECTION",
+                    "creation_date": "2024-06-21T07:12:02.939000",
+                    "is_empty": false,
+                    "is_anomalous": false
+                },
+                "667527c2c514c9e7249dfba7": {
+                    "_id": "667527c2c514c9e7249dfba7",
+                    "name": "pepper",
+                    "color": {
+                        "red": 84,
+                        "green": 143,
+                        "blue": 173,
+                        "alpha": 255
+                    },
+                    "hotkey": "",
+                    "domain": "ROTATED_DETECTION",
+                    "creation_date": "2024-06-21T07:12:02.939000",
+                    "is_empty": false,
+                    "is_anomalous": false
+                },
+                "667527c2c514c9e7249dfba8": {
+                    "_id": "667527c2c514c9e7249dfba8",
+                    "name": "potato",
+                    "color": {
+                        "red": 128,
+                        "green": 233,
+                        "blue": 175,
+                        "alpha": 255
+                    },
+                    "hotkey": "",
+                    "domain": "ROTATED_DETECTION",
+                    "creation_date": "2024-06-21T07:12:02.939000",
+                    "is_empty": false,
+                    "is_anomalous": false
+                },
+                "667527c2c514c9e7249dfba9": {
+                    "_id": "667527c2c514c9e7249dfba9",
+                    "name": "garlic",
+                    "color": {
+                        "red": 237,
+                        "green": 178,
+                        "blue": 0,
+                        "alpha": 255
+                    },
+                    "hotkey": "",
+                    "domain": "ROTATED_DETECTION",
+                    "creation_date": "2024-06-21T07:12:02.939000",
+                    "is_empty": false,
+                    "is_anomalous": false
+                },
+                "667527c2c514c9e7249dfbaa": {
+                    "_id": "667527c2c514c9e7249dfbaa",
+                    "name": "Spring onion",
+                    "color": {
+                        "red": 204,
+                        "green": 148,
+                        "blue": 218,
+                        "alpha": 255
+                    },
+                    "hotkey": "",
+                    "domain": "ROTATED_DETECTION",
+                    "creation_date": "2024-06-21T07:12:02.939000",
+                    "is_empty": false,
+                    "is_anomalous": false
+                },
+                "667527c2c514c9e7249dfbab": {
+                    "_id": "667527c2c514c9e7249dfbab",
+                    "name": "onion",
+                    "color": {
+                        "red": 38,
+                        "green": 81,
+                        "blue": 142,
+                        "alpha": 255
+                    },
+                    "hotkey": "",
+                    "domain": "ROTATED_DETECTION",
+                    "creation_date": "2024-06-21T07:12:02.939000",
+                    "is_empty": false,
+                    "is_anomalous": false
+                },
+                "667527c2c514c9e7249dfbac": {
+                    "_id": "667527c2c514c9e7249dfbac",
+                    "name": "bean curd",
+                    "color": {
+                        "red": 84,
+                        "green": 143,
+                        "blue": 173,
+                        "alpha": 255
+                    },
+                    "hotkey": "",
+                    "domain": "ROTATED_DETECTION",
+                    "creation_date": "2024-06-21T07:12:02.939000",
+                    "is_empty": false,
+                    "is_anomalous": false
+                },
+                "667527c2c514c9e7249dfbad": {
+                    "_id": "667527c2c514c9e7249dfbad",
+                    "name": "Radish",
+                    "color": {
+                        "red": 201,
+                        "green": 230,
+                        "blue": 73,
+                        "alpha": 255
+                    },
+                    "hotkey": "",
+                    "domain": "ROTATED_DETECTION",
+                    "creation_date": "2024-06-21T07:12:02.939000",
+                    "is_empty": false,
+                    "is_anomalous": false
+                },
+                "667527c2c514c9e7249dfbae": {
+                    "_id": "667527c2c514c9e7249dfbae",
+                    "name": "Fish Cakes",
+                    "color": {
+                        "red": 233,
+                        "green": 97,
+                        "blue": 21,
+                        "alpha": 255
+                    },
+                    "hotkey": "",
+                    "domain": "ROTATED_DETECTION",
+                    "creation_date": "2024-06-21T07:12:02.939000",
+                    "is_empty": false,
+                    "is_anomalous": false
+                },
+                "667527c2c514c9e7249dfbaf": {
+                    "_id": "667527c2c514c9e7249dfbaf",
+                    "name": "sausage",
+                    "color": {
+                        "red": 204,
+                        "green": 148,
+                        "blue": 218,
+                        "alpha": 255
+                    },
+                    "hotkey": "",
+                    "domain": "ROTATED_DETECTION",
+                    "creation_date": "2024-06-21T07:12:02.939000",
+                    "is_empty": false,
+                    "is_anomalous": false
+                },
+                "667527c2c514c9e7249dfbb0": {
+                    "_id": "667527c2c514c9e7249dfbb0",
+                    "name": "chicken",
+                    "color": {
+                        "red": 241,
+                        "green": 91,
+                        "blue": 133,
+                        "alpha": 255
+                    },
+                    "hotkey": "",
+                    "domain": "ROTATED_DETECTION",
+                    "creation_date": "2024-06-21T07:12:02.939000",
+                    "is_empty": false,
+                    "is_anomalous": false
+                },
+                "667527c2c514c9e7249dfbb1": {
+                    "_id": "667527c2c514c9e7249dfbb1",
+                    "name": "beef",
+                    "color": {
+                        "red": 255,
+                        "green": 86,
+                        "blue": 98,
+                        "alpha": 255
+                    },
+                    "hotkey": "",
+                    "domain": "ROTATED_DETECTION",
+                    "creation_date": "2024-06-21T07:12:02.939000",
+                    "is_empty": false,
+                    "is_anomalous": false
+                },
+                "667527c2c514c9e7249dfbb2": {
+                    "_id": "667527c2c514c9e7249dfbb2",
+                    "name": "pork",
+                    "color": {
+                        "red": 237,
+                        "green": 178,
+                        "blue": 0,
+                        "alpha": 255
+                    },
+                    "hotkey": "",
+                    "domain": "ROTATED_DETECTION",
+                    "creation_date": "2024-06-21T07:12:02.939000",
+                    "is_empty": false,
+                    "is_anomalous": false
+                },
+                "667527c2c514c9e7249dfbb3": {
+                    "_id": "667527c2c514c9e7249dfbb3",
+                    "name": "kimchi",
+                    "color": {
+                        "red": 0,
+                        "green": 165,
+                        "blue": 207,
+                        "alpha": 255
+                    },
+                    "hotkey": "",
+                    "domain": "ROTATED_DETECTION",
+                    "creation_date": "2024-06-21T07:12:02.939000",
+                    "is_empty": false,
+                    "is_anomalous": false
+                },
+                "667527c2c514c9e7249dfbb7": {
+                    "_id": "667527c2c514c9e7249dfbb7",
+                    "name": "No object",
+                    "color": {
+                        "red": 0,
+                        "green": 0,
+                        "blue": 0,
+                        "alpha": 255
+                    },
+                    "hotkey": "",
+                    "domain": "ROTATED_DETECTION",
+                    "creation_date": "2024-06-21T07:12:02.963000",
+                    "is_empty": true,
+                    "is_anomalous": false
+                }
+            }
+        }
+    },
+    "tiling_parameters": {
+        "visible_in_ui": true,
+        "type": "PARAMETER_GROUP",
+        "enable_tiling": false,
+        "enable_tile_classifier": false,
+        "enable_adaptive_params": true,
+        "tile_size": 400,
+        "tile_overlap": 0.2,
+        "tile_max_number": 1500,
+        "tile_ir_scale_factor": 1.0,
+        "tile_sampling_ratio": 1.0,
+        "object_tile_ratio": 0.03,
+        "header": "Tiling Parameters",
+        "description": "Tiling Parameters",
+        "_ParameterGroup__metadata_overrides": {},
+        "groups": [],
+        "parameters": [
+            "enable_adaptive_params",
+            "enable_tile_classifier",
+            "enable_tiling",
+            "object_tile_ratio",
+            "tile_ir_scale_factor",
+            "tile_max_number",
+            "tile_overlap",
+            "tile_sampling_ratio",
+            "tile_size"
+        ]
+    }
+}

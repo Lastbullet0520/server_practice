@@ -1,10 +1,14 @@
+import mimetypes
+
+import requests
 from flask import Flask, request, jsonify, render_template, send_file
 import os
 from pymongo import MongoClient
 from ultralytics import YOLO
 import cv2
 import spoonacular
-# from spoonacular.rest import ApiException
+from werkzeug.security import safe_join
+
 
 app = Flask(__name__)
 client = MongoClient("localhost", 27017)
@@ -14,14 +18,18 @@ configuration = spoonacular.Configuration(
     host="https://api.spoonacular.com"
 )
 configuration.api_key['apiKeyScheme'] = "4adcee865a5b4cde8580e088bffdd841"
+API_KEY = configuration.api_key['apiKeyScheme']
 
-model = YOLO("yolov8n.pt")
-# model.train(data="",epochs=50,patience=30,batch=32,imgsz=416)
+model = YOLO("best.pt")  # train 시킨 모델입니다. onnx 형식, pt 형식 둘 다 있습니다.
 
 # 이미지 저장 경로 설정
 UPLOAD_FOLDER = 'uploads'
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+
+UPLOAD_LIST = "uploads_list"
+os.makedirs(UPLOAD_LIST, exist_ok=True)
+app.config["UPLOAD_LIST"] = UPLOAD_LIST
 
 
 @app.route("/")
@@ -67,10 +75,10 @@ def upload_and_find():
                     x1, y1, x2, y2 = map(int, box.xyxy[0])
 
                     # 바운딩 박스 그리기
-                    cv2.rectangle(img, (x1, y1), (x2, y2), (0, 255, 0), 2)
-                    cv2.putText(img, class_name, (x1, y1 - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 255, 0), 1)
+                    cv2.rectangle(img, (x1, y1), (x2, y2), (0, 0, 255), 10)
+                    cv2.putText(img, class_name, (x1, y1 + 100), cv2.FONT_HERSHEY_SIMPLEX, 5, (255, 0, 0), 10)
 
-            output_filename = os.path.join(app.config['UPLOAD_FOLDER'], 'output_' + file.filename)
+            output_filename = os.path.join(app.config['UPLOAD_FOLDER'], 'boxed_' + file.filename)
             cv2.imwrite(output_filename, img)
 
             ingredients = ','.join(set(detected_objects))  # 중복 제거 후 콤마로 구분된 문자열로 변환
@@ -78,7 +86,7 @@ def upload_and_find():
 
             return jsonify({
                 "ingredients": ingredients,
-                "output_image": output_filename
+                "output_image": "boxed_" + file.filename
             })
 
         except Exception as e:
@@ -88,10 +96,11 @@ def upload_and_find():
     return jsonify({"error": "undefined error occurs"}), 500
 
 
-@app.route("/download/<filename>")
+@app.route("/download/<path:filename>")  # 바운딩 박스 이미지를 받는 url입니다. 안되면 알려주세요!
 def download_file(filename):
-    output_filename = "output_" + filename
-    return send_file(os.path.join(app.config['UPLOAD_FOLDER'], output_filename), as_attachment=True)
+    file_path = safe_join(app.config["UPLOAD_FOLDER"],  filename)
+    mime_type, _ = mimetypes.guess_type(file_path)
+    return send_file(file_path, mimetype=mime_type)
 
 
 @app.route("/findfoodlist", methods=["GET"])  # 식재료 넣으면 JSON 받는 코드
@@ -121,22 +130,24 @@ def find_food_list():
 
 
 # 이제 레시피 받는 코드, ID를 받는 걸로 진행해야 할 듯
-# @app.route("/saverecipe", methods=["GET"])
-# def save_recipe():
-#     with spoonacular.ApiClient(configuration) as api_client:
-#         # Create an instance of the API class
-#         api_instance = spoonacular.RecipesApi(api_client)
-#         ids = "715538,"+"716429"  # str | A comma-separated list of recipe ids.
-#         include_nutrition = True
-#
-#         try:
-#             # Get Recipe Information Bulk
-#             api_response = api_instance.get_recipe_information_bulk(ids=str(ids), include_nutrition=bool(include_nutrition))
-#             print(f"The response of RecipesApi->get_recipe_information_bulk:\n{api_response}")
-#             return jsonify(api_response)
-#         except Exception as e:
-#             print("Exception when calling RecipesApi->get_recipe_information_bulk: %s\n" % e)
-#             return jsonify({"error": str(e)}), 500
+@app.route("/saverecipe/<ids>", methods=["GET"])
+def save_recipe(ids):
+    try:
+        # API 요청 URL 구성
+        api_url = f"https://api.spoonacular.com/recipes/informationBulk?apiKey={API_KEY}&ids={ids}"
+        # API 호출
+        response = requests.get(api_url)
+        # 응답 상태 코드 확인
+        if response.status_code == 200:
+            # JSON 응답을 딕셔너리로 변환
+            data = response.json()
+            return jsonify(data)
+        else:
+            # 오류 처리
+            return jsonify({"error": "Failed to fetch data from Spoonacular API"}), response.status_code
+    except Exception as e:
+        print(f"Exception when calling Spoonacular API: {e}")
+        return jsonify({"error": str(e)}), 500
 
 
 # def clean_none_values(data):
@@ -153,6 +164,4 @@ def find_food_list():
 
 
 if __name__ == '__main__':
-    if not os.path.exists(app.config['UPLOAD_FOLDER']):
-        os.makedirs(app.config['UPLOAD_FOLDER'])
     app.run(host='192.168.45.158', port=5000, debug=True)
